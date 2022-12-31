@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	engine := gin.Default()
 	controllers.ApplyRoutes(engine)
 	engine.Run() // listen and serve on 0.0.0.0:8080
