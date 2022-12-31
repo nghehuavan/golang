@@ -8,9 +8,11 @@ import (
 )
 
 func main() {
-	mysql.OpenConnection()
-	migrate(mysql.Instance)
-	mysql.CloseConnection()
+	db := mysql.OpenConnection()
+	defer func() {
+		mysql.CloseConnection()
+	}()
+	migrate(db)
 }
 func migrate(db *gorm.DB) {
 

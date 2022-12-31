@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"esgo/controllers/about"
 	"esgo/controllers/crud"
 	"esgo/controllers/home"
 
@@ -10,7 +9,6 @@ import (
 
 func Apply(engine *gin.Engine) {
 	engine.GET("/", home.Index)
-	engine.GET("/about", about.Index)
 
 	engine.GET("/crud", crud.Index)
 	engine.POST("/crud", crud.Index)
