@@ -1,4 +1,4 @@
-package routes
+package controllers
 
 import (
 	"esgo/controllers/crud"
@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Apply(engine *gin.Engine) {
+func ApplyRoutes(engine *gin.Engine) {
 	engine.GET("/", home.Index)
 
 	engine.GET("/crud", crud.Index)
