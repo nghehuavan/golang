@@ -11,4 +11,5 @@ git.exe pull -v --progress "origin"
 SET /P sComment= Enter for CLEAN-UP ?
 git clean -d -f
 git clean -d -f -X
+git gc
 pause
