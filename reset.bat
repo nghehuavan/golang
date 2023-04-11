@@ -1,4 +1,7 @@
 @echo off
+set thisFilePath=%~dp0
+cd /d %thisFilePath%
+
 @echo "@@ Reset And Pull All File @@"
 SET /P sComment= Enter for PULL ?
 
