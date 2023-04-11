@@ -1,5 +1,4 @@
 @echo off
-:CD ..
 @echo "@@ Reset And Pull All File @@"
 SET /P sComment= Enter for PULL ?
 
