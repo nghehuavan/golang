@@ -11,7 +11,8 @@
         "mode": "auto",
         "program": "${workspaceFolder}",
         "envFile": "${workspaceFolder}/.env",
-        "args": []
+        "args": [],
+        "buildFlags": "-buildvcs=false"
     }
 ]
 }

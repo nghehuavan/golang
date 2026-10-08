@@ -23,18 +23,19 @@ func Index(c *gin.Context) {
 		mysql.CloseConnection()
 	}()
 
-	if c.Request.Method == http.MethodGet {
+	switch c.Request.Method {
+	case http.MethodGet:
 		var results []entities.User
 		db.Where("Name LIKE ?", "%"+user.Name+"%").Find(&results)
 		c.JSON(http.StatusOK, results)
 
-	} else if c.Request.Method == http.MethodPost {
+	case http.MethodPost:
 		db.Create(&user)
 		c.JSON(http.StatusCreated, user)
-	} else if c.Request.Method == http.MethodPut {
+	case http.MethodPut:
 		db.Save(&user)
 		c.JSON(http.StatusOK, user)
-	} else if c.Request.Method == http.MethodDelete {
+	case http.MethodDelete:
 		db.Delete(&user)
 		c.Status(http.StatusOK)
 	}
